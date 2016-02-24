@@ -16,21 +16,16 @@ TODO: Write usage instructions
 5. Submit a pull request
 
 ## Development, Staging, Production
-WP CLI SSH
-https://github.com/xwp/wp-cli-ssh
-State Switcher [https://github.com/roots/wp-stage-switcher].
+WP CLI SSH - https://github.com/xwp/wp-cli-ssh
+Stage Switcher - https://github.com/roots/wp-stage-switcher
 
 
 ## Bootstrap Resources
-#### Bootstrap notifications
-http://bootstrap-notify.remabledesigns.com/
+Bootstrap Growl Like Notifications - http://bootstrap-notify.remabledesigns.com/
 
 
 ## NPM Resources
-#### Sage
-https://github.com/roots/sage
-
-
+TODO: What is NPM
 
 ## History
 TODO: Write history
