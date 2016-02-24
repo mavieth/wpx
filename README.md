@@ -21,6 +21,7 @@ TODO: Write usage instructions
 
 ## Bootstrap Resources
 * Bootstrap Growl Like Notifications - http://bootstrap-notify.remabledesigns.com/
+* Wordpress Bootstrap Theme - https://github.com/320press/wordpress-bootstrap
 
 ## Wordpress Resources
 * WP Generator - https://generatewp.com/
