@@ -1,8 +1,6 @@
 <?php 
-
 // Register Custom Portfolio Post Type
 function portfolio_post_type() {
-
 	$labels = array(
 		'name'                  => _x( 'Portfolios', 'Post Type General Name', 'text_domain' ),
 		'singular_name'         => _x( 'Portfolio', 'Post Type Singular Name', 'text_domain' ),
@@ -40,6 +38,7 @@ function portfolio_post_type() {
 		'public'                => true,
 		'show_ui'               => true,
 		'show_in_menu'          => true,
+		'menu_icon' => '',
 		'menu_position'         => 5,
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
@@ -50,11 +49,8 @@ function portfolio_post_type() {
 		'capability_type'       => 'page',
 	);
 	register_post_type( 'portfolio', $args );
-
 }
 add_action( 'init', 'portfolio_post_type', 0 );
-
-
 // Query Custom Post Type
 function query_portfolio_posts(){
 	// WP_Query arguments
@@ -64,14 +60,11 @@ function query_portfolio_posts(){
 		'posts_per_page'         => '12',
 		'order'                  => 'DESC',
 	);
-
 	// The Query
 	$query = new WP_Query( $args );
 }
-
 // Add Shortcode
 function portfolio_shortcode( $atts ) {
-
 	// Attributes
 	extract( shortcode_atts(
 		array(
@@ -80,4 +73,15 @@ function portfolio_shortcode( $atts ) {
 	);
 }
 add_shortcode( 'get-portfolios', 'portfolio_shortcode' );
-?>
+
+// Change Dash Icon
+// https://developer.wordpress.org/resource/dashicons/#edit
+function add_menu_icons_styles(){ ?>
+	<style>#adminmenu .menu-icon-portfolio div.wp-menu-image:before { content: '\f133';}</style><?php
+}
+add_action( 'admin_head', 'add_menu_icons_styles' );
+
+
+
+
+

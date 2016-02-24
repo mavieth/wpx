@@ -1,6 +1,18 @@
 <?php
   // This file assumes that you have included the nav walker from https://github.com/twittem/wp-bootstrap-navwalker
   // somewhere in your theme.
+  // In Sage function.php file add wp_bootstrap_nav_walker.php to included files:
+
+  // $sage_includes = [
+  //   'lib/assets.php',    // Scripts and stylesheets
+  //   'lib/extras.php',    // Custom functions
+  //   'lib/setup.php',     // Theme setup
+  //   'lib/titles.php',    // Page titles
+  //   'lib/wrapper.php',                   // Theme wrapper class
+  //   'lib/wp_bootstrap_nav_walker.php',   // Theme wrapper class
+  //   'lib/customizer.php'                 // Theme customizer
+  // ];
+
 ?>
 <header class="banner navbar navbar-inverse navbar-static-top" role="banner">
   <div class="container">
