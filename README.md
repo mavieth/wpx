@@ -17,6 +17,13 @@ TODO: Write usage instructions
 http://bootstrap-notify.remabledesigns.com/
 
 
+## NPM Resources
+### Sage
+https://github.com/roots/sage
+#### Stage Switcher
+https://github.com/roots/wp-stage-switcher
+
+
 ## History
 TODO: Write history
 ## Credits
