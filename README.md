@@ -21,6 +21,8 @@ TODO:
 * Copy files from bootstrap nav walker and update functions.php (Sage) to include that file
 * Menu not assigning correctly on install
 * Create single/archive page templates for custom post type
+* Add options for new themes/plugins
+* Import stock images
 
 
 ## Development, Staging, Production
