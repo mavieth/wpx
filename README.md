@@ -15,6 +15,14 @@ TODO: Write usage instructions
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request
 
+## Bash Script Install
+TODO: 
+* Add git repo when creating
+* Copy files from bootstrap nav walker and update functions.php (Sage) to include that file
+* Menu not assigning correctly on install
+* Create single/archive page templates for custom post type
+
+
 ## Development, Staging, Production
 * WP CLI SSH - https://github.com/xwp/wp-cli-ssh
 * Stage Switcher - https://github.com/roots/wp-stage-switcher
