@@ -16,10 +16,9 @@ TODO: Write usage instructions
 5. Submit a pull request
 
 ## Development, Staging, Production
-#### WP CLI SSH
+WP CLI SSH
 https://github.com/xwp/wp-cli-ssh
-#### Stage Switcher
-https://github.com/roots/wp-stage-switcher
+State Switcher [https://github.com/roots/wp-stage-switcher].
 
 
 ## Bootstrap Resources
