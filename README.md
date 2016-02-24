@@ -22,7 +22,7 @@ TODO: Write usage instructions
 
 
 ## Bootstrap Resources
-Bootstrap Growl Like Notifications - http://bootstrap-notify.remabledesigns.com/
+* Bootstrap Growl Like Notifications - http://bootstrap-notify.remabledesigns.com/
 
 
 ## NPM Resources
