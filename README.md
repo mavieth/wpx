@@ -3,7 +3,6 @@
 ### Installation
 ```bash
 git clone https://github.com/mavieth/wpx.git
-print s
 ```
 
 
