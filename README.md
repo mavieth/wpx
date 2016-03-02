@@ -1,21 +1,20 @@
 # wpx
 # WordPress X Files
-TODO: Find a girlfriend
 
-## Installation
+### Installation
 TODO: Describe the installation process
 
-## Usage
+### Usage
 TODO: Write usage instructions
 
-## Contributing
-1. Fork it!
+### Contributing
+1. Fork it, add some cool wordpress functions or files that you use.
 2. Create your feature branch: `git checkout -b my-new-feature`
 3. Commit your changes: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request
 
-## Bash Script Install
+### Bash Script Install
 TODO: 
 * Add git repo when creating
 * Copy files from bootstrap nav walker and update functions.php (Sage) to include that file
@@ -25,26 +24,26 @@ TODO:
 * Import stock images
 
 
-## Development, Staging, Production
+### Development, Staging, Production
 * WP CLI SSH - https://github.com/xwp/wp-cli-ssh
 * Stage Switcher - https://github.com/roots/wp-stage-switcher
 
-## Bootstrap Resources
+### Bootstrap Resources
 * Bootstrap Growl Like Notifications - http://bootstrap-notify.remabledesigns.com/
 * Wordpress Bootstrap Theme - https://github.com/320press/wordpress-bootstrap
 
-## Wordpress Resources
+### Wordpress Resources
 * WP Generator - https://generatewp.com/
 
 
-## NPM Resources
-TODO: What is NPM
+### NPM Resources
+TODO: * Update NPM Resource List
 
-## History
-TODO: Write history
+### History
+TODO: * Update History List
 
-## Credits
-TODO: Write credits
+### Credits
+TODO: * Update Credits
 
-## License
-TODO: Write license
+### License
+TODO: * Update License
