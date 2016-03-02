@@ -1,11 +1,14 @@
-# wpx
-# WordPress X Files
+## WPX
 
 ### Installation
-TODO: Describe the installation process
+```bash
+git clone https://github.com/mavieth/wpx.git
+print s
+```
+
 
 ### Usage
-TODO: Write usage instructions
+Use the scripts in your themes or plugins. 
 
 ### Contributing
 1. Fork it, add some cool wordpress functions or files that you use.
@@ -37,13 +40,17 @@ TODO:
 
 
 ### NPM Resources
-TODO: * Update NPM Resource List
+TODO: 
+* Update NPM Resource List
 
 ### History
-TODO: * Update History List
+TODO: 
+* Update History List
 
 ### Credits
-TODO: * Update Credits
+TODO: 
+* Update Credits
 
 ### License
-TODO: * Update License
+TODO: 
+* Update License
