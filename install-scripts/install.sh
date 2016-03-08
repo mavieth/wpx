@@ -8,18 +8,15 @@
 
 # ------------------------------------------------------------------------------
 # Set repo location
-sagerepo='https://github.com/roots/sage.git'
-plugs="https://github.com/mavieth/wpx.git"
+sagerepo='https://github.com/mavieth/sage.git'
+wpxfiles="https://github.com/mavieth/wpx.git"
 
 localusername=$(whoami)
-www_base='/Users/'$localusername/'Sites'
-cd $www_base
+sitedir='/Users/'$localusername/'Sites'
+cd $sitedir
 
 
-if [ ! -d "wpx" ]; then
-	echo "Downloading prerequisite $plugs"
-	git clone $plugs
-fi
+
 
 echo "Please enter the name of the new wp directory:"
 read  wp_dir
@@ -28,7 +25,7 @@ mkdir $wp_dir
 cd $wp_dir
 wp core download
 
-echo "New Directory Created at: $www_base/$wp_dir"
+echo "New Directory Created at: $sitedir/$wp_dir"
 
 # Accepts comma sep. list of pages to create
 echo "Add Pages: "
@@ -124,32 +121,34 @@ wp menu location assign main-navigation primary
 
 
 setup_theme () {
-	cd $www_base/$wp_dir/wp-content/themes
+	cd $sitedir/$wp_dir/wp-content/themes
 	
 	echo "Change Theme Name:"
 	read themename
 	git clone $sagerepo $themename
 
-	# Change first line of style.css to avoid confusion
-	themeline="Theme Name: "
-	themeline+=$themename
+	git clone $wpxfiles $themename/wpx
 
-	awk -v stylename="$themeline" '{ if (NR == 1) print stylename; else print $0}' $www_base/$wp_dir/wp-content/themes/$themename/style.css > $www_base/$wp_dir/wp-content/themes/$themename/stylemod.css
+	# Change first line of style.css to avoid confusion
+	themeNameUpdate="Theme Name: "
+	themeNameUpdate+=$themename
+
+	awk -v stylename="$themeNameUpdate" '{ if (NR == 1) print stylename; else print $0}' $sitedir/$wp_dir/wp-content/themes/$themename/style.css > $sitedir/$wp_dir/wp-content/themes/$themename/stylemod.css
 	echo "Enter Sudo Password (optional):"
-	sudo cp $www_base/$wp_dir/wp-content/themes/$themename/stylemod.css $www_base/$wp_dir/wp-content/themes/$themename/style.css
-	rm -rf $www_base/$wp_dir/wp-content/themes/$themename/stylemod.css
+	sudo cp $sitedir/$wp_dir/wp-content/themes/$themename/stylemod.css $sitedir/$wp_dir/wp-content/themes/$themename/style.css
+	rm -rf $sitedir/$wp_dir/wp-content/themes/$themename/stylemod.css
 
 	# Backup original config file
-	cp $www_base/$wp_dir/wp-config.php $www_base/$wp_dir/wp-config.bak.php
+	cp $sitedir/$wp_dir/wp-config.php $sitedir/$wp_dir/wp-config.bak.php
 
 	# Add a new line
 	newline="/* Define the Roots Environment */\ndefine('WP_ENV', 'development');\n"
 
 	# Insert into a temporary file
-	awk -v insert="$newline" 'NR==3{print insert}1' $www_base/$wp_dir/wp-config.php > $www_base/$wp_dir/wp-config-temp.php
+	awk -v insert="$newline" 'NR==3{print insert}1' $sitedir/$wp_dir/wp-config.php > $sitedir/$wp_dir/wp-config-temp.php
 
 	# Copy to wp-config.php
-	cp $www_base/$wp_dir/wp-config-temp.php $www_base/$wp_dir/wp-config.php
+	cp $sitedir/$wp_dir/wp-config-temp.php $sitedir/$wp_dir/wp-config.php
 
 }
 
@@ -159,22 +158,22 @@ function install_plugins {
 	wp plugin delete akismet
 	wp plugin delete hello
 
-	# install Plugs
-	wp plugin install $www_base/wpx/plugins/wp-sync-db.zip --activate
-	wp plugin install $www_base/wpx/plugins/wp-sync-db-media-files.zip --activate
+	# install wpxfiles
+	wp plugin install $sitedir/wpx/plugins/wp-sync-db.zip --activate
+	wp plugin install $sitedir/wpx/plugins/wp-sync-db-media-files.zip --activate
 	wp plugin install advanced-custom-fields --activate
 }
 
 # 3
 function install_soil {
-	cd $www_base/$wp_dir/wp-content/plugins
+	cd $sitedir/$wp_dir/wp-content/plugins
 	git clone https://github.com/roots/soil.git
 	wp plugin activate soil
 }
 
 # 4
 function setup_node {
-	cd $www_base/$wp_dir/wp-content/themes/
+	cd $sitedir/$wp_dir/wp-content/themes/
 	wp theme activate $themename
 	cd $themename
 	replace "http://example.dev" "http://localhost/~$localusername/$wp_dir" -- assets/manifest.json
@@ -184,7 +183,7 @@ function setup_node {
 
 # 5
 function run_gulp {
-	cd $www_base/$wp_dir/wp-content/themes/$themename
+	cd $sitedir/$wp_dir/wp-content/themes/$themename
 	subl .
 	gulp
 	gulp watch
