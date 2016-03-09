@@ -32,7 +32,7 @@ function portfolio_post_type() {
 		'label'                 => __( 'Portfolio', 'text_domain' ),
 		'description'           => __( 'Portfolios for users.', 'text_domain' ),
 		'labels'                => $labels,
-		'supports'              => array( ),
+		'supports'              => array('title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'),
 		'taxonomies'            => array( 'category', 'post_tag' ),
 		'hierarchical'          => false,
 		'public'                => true,
