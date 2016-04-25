@@ -40,15 +40,17 @@ read -e allpages
 # # ------------------------------------------------------------------------------
 echo "Enter the name of the new database:"
 read  db_name
-dbuser=$db_name
-dbuser+=_user
-newpassword=$db_name
-newpassword+=_pass1234
-dbprefix=wp_
+
+
 
 
 echo "Enter the MySQL root password:"
 read  rootpassword
+
+dbuser=$db_name
+dbuser+=_user
+newpassword=$rootpassword
+dbprefix=wp_
 
 db="create database $db_name;GRANT ALL PRIVILEGES ON $db_name.* TO $dbuser@localhost IDENTIFIED BY '$newpassword';FLUSH PRIVILEGES;"
 mysql -u root -p$rootpassword -e "$db"
